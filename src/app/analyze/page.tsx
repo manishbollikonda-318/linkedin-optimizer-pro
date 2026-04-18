@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { motion } from 'react-router-dom'; // Using react-router-dom specifically for this component if needed or framer-motion
-import { motion as m } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 
 export default function AnalyzePage() {
@@ -53,7 +52,7 @@ export default function AnalyzePage() {
         </div>
       </div>
 
-      <m.div 
+      <motion.div 
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -106,7 +105,7 @@ export default function AnalyzePage() {
             ← Disconnect Portal
           </button>
         </div>
-      </m.div>
+      </motion.div>
     </main>
   );
 }
