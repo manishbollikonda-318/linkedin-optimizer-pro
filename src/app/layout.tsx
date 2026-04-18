@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import { Navbar, Footer } from "@/components/layout";
 import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-sans' });
@@ -12,8 +13,8 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "LinkedIn Optimizer Pro | Engineered Profiling",
-  description: "Advanced structural extraction and psychological tone audits for LinkedIn.",
+  title: "LinkOptimizer | Editorial LinkedIn AI Analysis",
+  description: "Advanced structural extraction and psychological tone audits for LinkedIn. Optimize your professional footprint with LLM-engineered narratives.",
 };
 
 export default function RootLayout({
@@ -24,8 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${cormorant.variable} font-sans bg-[#F2EFED] text-[#000000] antialiased selection:bg-[#1A1A1A] selection:text-[#F2EFED]`}>
-        {children}
-        <Toaster position="bottom-right" theme="light" />
+        <Navbar />
+        <div className="pt-28 md:pt-40 min-h-screen">
+          {children}
+        </div>
+        <Footer />
+        <Toaster position="bottom-right" theme="light" richColors />
       </body>
     </html>
   );
