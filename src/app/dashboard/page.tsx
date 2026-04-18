@@ -98,48 +98,55 @@ export default function DashboardPage() {
         </div>
       </motion.header>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 items-stretch">
-         <div className="relative flex flex-col items-center justify-center p-12 bg-black/5 rounded-sm group overflow-hidden border border-black/5">
+      <section className="space-y-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+          <div className="bg-[#F9F8F7] p-16 rounded-sm border border-black/5 flex flex-col items-center justify-center relative overflow-hidden group min-h-[400px]">
             <motion.div 
-              initial={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[12rem] md:text-[14rem] font-serif leading-none tracking-tighter"
+              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[12rem] md:text-[16rem] font-serif leading-none tracking-tighter"
             >
               {data.score}
             </motion.div>
-            <p className="text-[10px] tracking-[0.6em] uppercase font-bold opacity-30 mt-4">Global Audit Score</p>
+            <p className="text-[10px] tracking-[1em] uppercase font-bold opacity-30 mt-8">Global Audit Score</p>
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/20 to-transparent"></div>
-         </div>
+          </div>
 
-         <div className="p-10 border border-black/10 rounded-sm flex flex-col justify-between hover:bg-white transition-all duration-700 shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] group">
-            <Zap className="w-6 h-6 text-yellow-600 transition-transform group-hover:rotate-[20deg] group-hover:scale-110" />
-            <div className="space-y-4">
-              <span className="text-8xl font-serif leading-none block tracking-tighter">{data.metrics.actionVerbs}</span>
-              <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold border-l border-black/10 pl-3">Impulse Verbs</p>
+          <div className="grid grid-cols-1 gap-4">
+            <div className="bg-white border border-black/10 p-12 rounded-sm flex items-center justify-between group hover:shadow-2xl transition-all duration-700 min-h-[140px]">
+               <div className="flex items-center gap-10">
+                  <div className="p-4 bg-black/5 rounded-full"><Zap className="w-8 h-8 text-yellow-600" /></div>
+                  <div>
+                    <span className="text-8xl font-serif block tracking-tighter leading-none">{data.metrics.actionVerbs}</span>
+                    <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold mt-4">Impulse Verbs</p>
+                  </div>
+               </div>
             </div>
-         </div>
 
-         <div className="p-10 border border-black/10 rounded-sm flex flex-col justify-between hover:bg-white transition-all duration-700 shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] group relative overflow-hidden min-w-0">
-            <Search className="w-6 h-6 text-[#666666] transition-transform group-hover:scale-125 duration-500" />
-            <div className="space-y-4">
-              <span className="text-[20px] md:text-[24px] font-serif leading-tight uppercase italic block tracking-tight text-[#1A1A1A] truncate">
-                {data.metrics.readability}
-              </span>
-              <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold border-l border-black/10 pl-3">Readability Audit</p>
+            <div className="bg-white border border-black/10 p-12 rounded-sm flex items-center justify-between group hover:shadow-2xl transition-all duration-700 overflow-hidden min-h-[140px]">
+               <div className="flex items-center gap-10 min-w-0 flex-1">
+                  <div className="p-4 bg-black/5 rounded-full"><Search className="w-8 h-8 text-[#666666]" /></div>
+                  <div className="min-w-0">
+                    <span className="text-4xl md:text-6xl font-serif block italic leading-none truncate overflow-hidden">
+                      {data.metrics.readability}
+                    </span>
+                    <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold mt-4">Linguistic Readability</p>
+                  </div>
+               </div>
             </div>
-            <div className="absolute top-0 right-0 p-2 opacity-10">
-              <div className="w-10 h-10 border-t border-r border-black"></div>
-            </div>
-         </div>
 
-         <div className="p-10 border border-black/10 rounded-sm flex flex-col justify-between hover:bg-white transition-all duration-700 shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] group">
-            <BarChart3 className="w-6 h-6 text-[#666666] transition-transform group-hover:-translate-y-2 duration-500" />
-            <div className="space-y-4">
-              <span className="text-8xl font-serif leading-none block tracking-tighter">{data.metrics.wordCount}</span>
-              <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold border-l border-black/10 pl-3">Total Depth</p>
+            <div className="bg-white border border-black/10 p-12 rounded-sm flex items-center justify-between group hover:shadow-2xl transition-all duration-700 min-h-[140px]">
+               <div className="flex items-center gap-10">
+                  <div className="p-4 bg-black/5 rounded-full"><BarChart3 className="w-8 h-8 text-[#666666]" /></div>
+                  <div>
+                    <span className="text-8xl font-serif block tracking-tighter leading-none">{data.metrics.wordCount}</span>
+                    <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold mt-4">Contextual Depth</p>
+                  </div>
+               </div>
             </div>
-         </div>
+          </div>
+        </div>
       </section>
 
       <div className="w-full">

@@ -110,42 +110,46 @@ export default function AnalyzePage() {
             <input 
               value={url} 
               onChange={e => setUrl(e.target.value)}
-              placeholder="https://linkedin.com/in/..." 
-              className="w-full bg-transparent border-b border-[#1A1A1A]/20 focus:border-[#000000] pb-8 text-2xl md:text-3xl font-serif outline-none transition-all placeholder:text-[#1A1A1A]/10"
-            />
-          </div>
+        <div className="text-center mb-16 space-y-4">
+          <div className="text-[10px] tracking-[0.5em] uppercase opacity-40 font-bold mb-8">System Access Portal</div>
+          <h1 className="font-serif text-6xl md:text-8xl tracking-tight leading-none mb-6">
+            Neural <span className="italic">Link</span> Audit
+          </h1>
+          <p className="text-xl md:text-2xl text-[#666666] font-light max-w-2xl mx-auto">
+            Input your profile identifier for a total structural deconstruction and strategic optimization.
+          </p>
+        </div>
 
-          <div className="space-y-6 group">
-            <label className="text-[11px] uppercase tracking-[0.4em] font-bold text-[#666666] group-focus-within:text-[#000000] transition-colors">
-               Resume Auxiliary (Optional)
-            </label>
-            <div 
-              onClick={() => fileInputRef.current?.click()}
-              className="border-b border-[#1A1A1A]/20 hover:border-[#000000] pb-8 flex items-center justify-between cursor-pointer group/file transition-all"
-            >
-              <span className="text-xl font-serif text-[#1A1A1A]/40 group-hover/file:text-[#000000] transition-colors">
-                {file ? file.name : "Append resume data (.pdf, .txt)"}
-              </span>
-              <UploadCloud className="w-8 h-8 text-[#1A1A1A]/20 group-hover/file:text-[#000000] group-hover/file:scale-110 transition-all" />
-              <input 
-                type="file" 
-                ref={fileInputRef} 
-                className="hidden" 
-                onChange={e => e.target.files && setFile(e.target.files[0])} 
-              />
+        <form onSubmit={handleAnalyze} className="space-y-12">
+          <div className="relative group">
+            <input
+              type="text"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              placeholder="YOUR LINKEDIN URL OR IDENTIFIER"
+              className="w-full bg-white border border-black/10 px-10 py-10 rounded-sm text-lg md:text-2xl tracking-widest uppercase focus:outline-none focus:border-black transition-all duration-700 shadow-sm hover:shadow-xl focus:shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] outline-none"
+            />
+            <div className="absolute right-10 top-1/2 -translate-y-1/2 flex items-center gap-4 opacity-20 group-focus-within:opacity-100 transition-opacity">
+               <ShieldCheck className="w-6 h-6" />
+               <span className="text-[10px] tracking-widest font-bold hidden sm:block uppercase">Secure Channel</span>
             </div>
           </div>
 
-          <div className="pt-12 flex flex-col items-center gap-12">
-            <button 
-              type="submit" 
-              disabled={!url || isAnalyzing}
-              className="bg-[#1A1A1A] text-[#F2EFED] px-16 py-6 rounded-sm hover:bg-[#000000] transition-all disabled:opacity-10 flex items-center gap-6 group shadow-xl"
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              disabled={isAnalyzing || !url}
+              className="group relative bg-[#1A1A1A] text-white px-20 py-8 rounded-sm overflow-hidden transition-all duration-700 disabled:opacity-30 transform hover:-translate-y-1 active:scale-95"
             >
-               <span className="text-[11px] tracking-[0.3em] uppercase font-bold">Initiate Deep Scan</span>
-               <ArrowRight className="w-5 h-5 group-hover:translate-x-3 transition-transform duration-500" />
+              <span className="relative z-10 text-[11px] tracking-[0.8em] font-bold uppercase flex items-center gap-6">
+                {isAnalyzing ? 'Processing Channel...' : 'Begin Deep Audit'}
+              </span>
+              <div className="absolute inset-0 bg-[#333333] translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
             </button>
-            <button 
+          </div>
+          
+          <div className="flex justify-center">
+            <button
               type="button"
               onClick={() => router.back()}
               className="flex items-center gap-3 text-[10px] tracking-widest uppercase text-[#666666] hover:text-[#000000] transition-colors group"
