@@ -1,0 +1,9 @@
+1:"$Sreact.fragment"
+2:I[47257,["/linkedin-optimizer-pro/_next/static/chunks/040hh0v7n-bm-.js","/linkedin-optimizer-pro/_next/static/chunks/0d3shmwh5_nmn.js"],"ClientPageRoot"]
+3:I[30257,["/linkedin-optimizer-pro/_next/static/chunks/040hh0v7n-bm-.js","/linkedin-optimizer-pro/_next/static/chunks/0d3shmwh5_nmn.js","/linkedin-optimizer-pro/_next/static/chunks/0u0sd0uv9v3r3.js","/linkedin-optimizer-pro/_next/static/chunks/0b7h4c-ecygrx.js"],"default"]
+6:I[97367,["/linkedin-optimizer-pro/_next/static/chunks/040hh0v7n-bm-.js","/linkedin-optimizer-pro/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/linkedin-optimizer-pro/_next/static/chunks/0u0sd0uv9v3r3.js","async":true}],["$","script","script-1",{"src":"/linkedin-optimizer-pro/_next/static/chunks/0b7h4c-ecygrx.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"-3CcBzvYp32qFqgZ4_XUn"}
+4:{}
+5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
+8:null
