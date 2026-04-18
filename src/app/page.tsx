@@ -149,7 +149,8 @@ export default function UniversalOptimizer() {
   const itemVariants = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
   return (
-    <div className="min-h-screen bg-[#F2EFED] text-[#000000] selection:bg-[#1A1A1A] selection:text-[#F2EFED] transition-colors duration-700">
+  return (
+    <div className="min-h-screen bg-[#F2EFED] text-[#000000] selection:bg-[#1A1A1A] selection:text-[#F2EFED] transition-colors duration-700 antialiased overflow-x-hidden">
       
       {view === 'landing' && (
         <main className="container mx-auto px-6 pt-32 pb-32 flex flex-col items-center justify-center min-h-screen text-center">
@@ -249,15 +250,21 @@ export default function UniversalOptimizer() {
                      <div className="space-y-8"><span className="text-[10px] tracking-widest uppercase font-bold">Original About</span><p className="text-xl font-sans leading-loose text-[#444444] whitespace-pre-wrap">{data.ai.original_summary}</p></div>
                      <div className="space-y-8 border-l border-[#000000] pl-12 relative group"><div className="flex justify-between items-center"><span className="text-[10px] tracking-widest uppercase font-bold">AI Engineered</span><button onClick={() => copyToClipboard(data.ai.optimized_summary, 'sum')} className="opacity-0 group-hover:opacity-100 transition-opacity"><Copy className="w-4 h-4"/></button></div><p className="text-xl font-sans leading-loose text-[#000000] whitespace-pre-wrap">{data.ai.optimized_summary}</p></div>
                   </div>
-                  {data.ai.experiences.map((exp, i) => (
-                    <div key={i} className="space-y-12 border-t border-[#1A1A1A]/10 pt-24">
-                       <h3 className="text-3xl font-serif">{exp.company_and_role}</h3>
-                       <div className="grid lg:grid-cols-2 gap-24">
-                          <div className="space-y-6"><span className="text-[10px] tracking-widest uppercase opacity-50">Current</span><p className="text-base leading-relaxed opacity-60 whitespace-pre-wrap">{exp.original_bullet_points}</p></div>
-                          <div className="space-y-6 border-l border-[#000000] pl-12 group relative"><button onClick={() => copyToClipboard(exp.optimized_bullet_points, i)} className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity"><Copy className="w-4 h-4"/></button><span className="text-[10px] tracking-widest uppercase font-bold">Enhanced Framework</span><p className="text-base leading-relaxed whitespace-pre-wrap">{exp.optimized_bullet_points}</p></div>
-                       </div>
-                    </div>
-                  ))}
+                      {data.ai.experiences.map((exp, i) => (
+                        <motion.div 
+                          key={i} 
+                          initial={{ opacity: 0, y: 10 }} 
+                          whileInView={{ opacity: 1, y: 0 }} 
+                          viewport={{ once: true, margin: "-100px" }}
+                          className="space-y-12 border-t border-[#1A1A1A]/10 pt-24"
+                        >
+                           <h3 className="text-3xl font-serif">{exp.company_and_role}</h3>
+                           <div className="grid lg:grid-cols-2 gap-24">
+                              <div className="space-y-6"><span className="text-[10px] tracking-widest uppercase opacity-50">Current</span><p className="text-base leading-relaxed opacity-60 whitespace-pre-wrap">{exp.original_bullet_points}</p></div>
+                              <div className="space-y-6 border-l border-[#000000] pl-12 group relative"><button onClick={() => copyToClipboard(exp.optimized_bullet_points, i)} className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity"><Copy className="w-4 h-4"/></button><span className="text-[10px] tracking-widest uppercase font-bold">Enhanced Framework</span><p className="text-base leading-relaxed whitespace-pre-wrap">{exp.optimized_bullet_points}</p></div>
+                           </div>
+                        </motion.div>
+                      ))}
                 </div>
               )}
 
