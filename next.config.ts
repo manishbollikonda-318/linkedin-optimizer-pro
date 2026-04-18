@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Ensure the base path matches the GitHub repo name for Pages
   basePath: '/linkedin-optimizer-pro',
   assetPrefix: '/linkedin-optimizer-pro/',
+  trailingSlash: true, // Crucial for static hosting on GitHub Pages
 };
 
 export default nextConfig;
