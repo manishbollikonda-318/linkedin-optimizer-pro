@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# linkedin-optimizer-pro
 
-## Getting Started
+> **Absolute Precision. Algorithmic Tone Auditing. Universal Deployment.**
 
-First, run the development server:
+A high-fidelity LinkedIn Profile Optimizer engineered for maximum impact. This platform provides deep structural analysis of LinkedIn profiles and supplies LLM-engineered narratives to help you stand out to executive recruiters and ATS systems.
 
+## 🏗️ Simplified Unified Architecture
+The entire Next.js application has been consolidated into a **single-file view** (`src/app/page.tsx`) to achieve the lowest possible file count while maintaining state-of-the-art UI/UX patterns.
+
+## 💎 Universal Deploy (Standalone)
+We provide a **one-file deployment solution** located at `public/universal-deploy.html`.
+- **Drag & Drop**: Can be deployed to any static host instantly.
+- **Embedded Engine**: Includes local scoring logic and premium styling via CDN.
+
+## 🚀 Quick Start
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Key Features
+- **Dynamic Scoring**: Real-time ATS probability scoring.
+- **Tone Audit**: Brutally honest AI feedback on your "BS/Fluff" factor.
+- **Experience Matrix**: Side-by-side optimization of your past roles.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Powered by AI Orchestration & Advanced Agentic Coding.*
