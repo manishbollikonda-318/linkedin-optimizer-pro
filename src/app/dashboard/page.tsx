@@ -120,13 +120,16 @@ export default function DashboardPage() {
             </div>
          </div>
 
-         <div className="p-10 border border-black/10 rounded-sm flex flex-col justify-between hover:bg-white transition-all duration-700 shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] group">
+         <div className="p-10 border border-black/10 rounded-sm flex flex-col justify-between hover:bg-white transition-all duration-700 shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] group relative overflow-hidden">
             <Search className="w-6 h-6 text-[#666666] transition-transform group-hover:scale-125 duration-500" />
             <div className="space-y-4">
-              <span className="text-4xl md:text-5xl font-serif leading-[1.1] uppercase italic break-words block tracking-tight text-[#1A1A1A]">
+              <span className="text-2xl md:text-3xl font-serif leading-tight uppercase italic break-words block tracking-tight text-[#1A1A1A]">
                 {data.metrics.readability}
               </span>
               <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold border-l border-black/10 pl-3">Readability Audit</p>
+            </div>
+            <div className="absolute top-0 right-0 p-2 opacity-5">
+              <div className="w-12 h-12 border-t border-r border-black"></div>
             </div>
          </div>
 
