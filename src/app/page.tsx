@@ -1,3 +1,10 @@
+/**
+ * @file page.tsx
+ * @description Unified state machine for the LinkedIn Optimizer Pro.
+ * Handles the end-to-end user journey: Landing -> Analysis -> Dashboard.
+ * Architecture: Extreme Minimalist (Self-contained logic & styling).
+ */
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -10,7 +17,13 @@ import {
 } from 'lucide-react';
 import { toast } from 'sonner';
 
-// --- Types ---
+/**
+ * @typedef {Object} DashboardData
+ * @property {number} score - Overall ATS & structural alignment score.
+ * @property {Object} metrics - Quantitative linguistic metrics.
+ * @property {Object} skills - Keyword matching and gap analysis.
+ * @property {Object} ai - Generated narratives and tone audits.
+ */
 type DashboardData = {
   score: number;
   metrics: any;
