@@ -98,25 +98,44 @@ export default function DashboardPage() {
         </div>
       </motion.header>
 
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-16 items-end">
-         <div className="relative flex flex-col items-center group">
-            <div className="text-[14rem] font-serif leading-none tracking-tighter transition-all group-hover:italic">{data.score}</div>
-            <p className="text-[11px] tracking-[0.5em] uppercase font-bold opacity-30 absolute bottom-0">Global Audit Score</p>
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-stretch">
+         <div className="relative flex flex-col items-center justify-center p-12 bg-black/5 rounded-sm group overflow-hidden border border-black/5">
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="text-[12rem] md:text-[14rem] font-serif leading-none tracking-tighter"
+            >
+              {data.score}
+            </motion.div>
+            <p className="text-[10px] tracking-[0.6em] uppercase font-bold opacity-30 mt-4">Global Audit Score</p>
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/20 to-transparent"></div>
          </div>
-         <div className="space-y-4 pb-4 border-b border-black/5">
-            <Zap className="w-5 h-5 text-yellow-600 mb-6" />
-            <span className="text-8xl font-serif leading-none">{data.metrics.actionVerbs}</span>
-            <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold">Impulse Verbs</p>
+
+         <div className="p-10 border border-black/10 rounded-sm flex flex-col justify-between hover:bg-white transition-all duration-700 shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] group">
+            <Zap className="w-6 h-6 text-yellow-600 transition-transform group-hover:rotate-[20deg] group-hover:scale-110" />
+            <div className="space-y-4">
+              <span className="text-8xl font-serif leading-none block tracking-tighter">{data.metrics.actionVerbs}</span>
+              <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold border-l border-black/10 pl-3">Impulse Verbs</p>
+            </div>
          </div>
-         <div className="space-y-4 pb-4 border-b border-black/5">
-            <Search className="w-5 h-5 text-[#666666] mb-6" />
-            <span className="text-7xl font-serif leading-none uppercase italic">{data.metrics.readability}</span>
-            <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold">Readability</p>
+
+         <div className="p-10 border border-black/10 rounded-sm flex flex-col justify-between hover:bg-white transition-all duration-700 shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] group">
+            <Search className="w-6 h-6 text-[#666666] transition-transform group-hover:scale-125 duration-500" />
+            <div className="space-y-4">
+              <span className="text-4xl md:text-5xl font-serif leading-[1.1] uppercase italic break-words block tracking-tight text-[#1A1A1A]">
+                {data.metrics.readability}
+              </span>
+              <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold border-l border-black/10 pl-3">Readability Audit</p>
+            </div>
          </div>
-         <div className="space-y-4 pb-4 border-b border-black/5">
-            <BarChart3 className="w-5 h-5 text-[#666666] mb-6" />
-            <span className="text-8xl font-serif leading-none">{data.metrics.wordCount}</span>
-            <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold">Total Depth</p>
+
+         <div className="p-10 border border-black/10 rounded-sm flex flex-col justify-between hover:bg-white transition-all duration-700 shadow-sm hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] group">
+            <BarChart3 className="w-6 h-6 text-[#666666] transition-transform group-hover:-translate-y-2 duration-500" />
+            <div className="space-y-4">
+              <span className="text-8xl font-serif leading-none block tracking-tighter">{data.metrics.wordCount}</span>
+              <p className="text-[10px] tracking-widest uppercase text-[#666666] font-bold border-l border-black/10 pl-3">Total Depth</p>
+            </div>
          </div>
       </section>
 
